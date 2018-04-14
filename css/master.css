@@ -1,1 +1,42 @@
-a
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url(../images/dust_scratches.png);
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  /* float: left; */
+}
+
+#header {
+  height: 100px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#searchArea {
+  float: left;
+  height: 100%;
+  padding: 10px;
+}
+
+#searchArea::before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+form {
+  display: inline-block;
+}
+
+#buttonGroup {
+  float: left;
+  height: 100%;
+  padding: 25px
+}
