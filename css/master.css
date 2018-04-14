@@ -19,14 +19,16 @@ body {
 
 #searchArea {
   float: left;
+  width: 20%;
   height: 100%;
   padding: 10px;
+  /* border: solid black 1px; */
 }
 
 #searchArea::before {
   content: "";
   height: 100%;
-  width: 1px;
+  width: 1%;
   vertical-align: middle;
   display: inline-block;
 }
@@ -36,7 +38,13 @@ form {
 }
 
 #buttonGroup {
-  float: left;
+  float: right;
   height: 100%;
-  padding: 25px
+  width: 80%;
+  padding: 25px;
+  background-color: #ccc
+}
+
+button {
+  
 }
