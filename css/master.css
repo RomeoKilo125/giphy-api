@@ -10,12 +10,17 @@ body {
 .container {
   width: 960px;
   margin: 0 auto;
+  display: grid;
+  grid-template-rows: 200px repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #header {
   min-height: 100px;
   width: 100%;
   margin-bottom: 50px;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
 }
 
 #searchArea {
@@ -64,15 +69,17 @@ button {
 
 #gifArea {
   text-align: center;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr); */
 }
 
 .gif {
   float: left;
   width: 30%;
   margin: 10px;
+  grid-row: auto;
+  grid-column: auto;
 }
 
 .gif p {
