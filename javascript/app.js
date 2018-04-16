@@ -19,6 +19,7 @@ app = function () {
     gif.attr('class', 'gif');
     let p = $('<p>').text("Rating: " + result.rating);
     let img = $('<img>');
+    img.attr('class', "gifImg")
     img.attr('stillUrl', result.images.fixed_width_still.url);
     img.attr('animatedUrl', result.images.fixed_width.url);
     img.attr('src', result.images.fixed_width_still.url);
@@ -27,6 +28,17 @@ app = function () {
     gif.append(img);
     $('#gifArea').append(gif);
   }
+
+  $(document).on("click", ".gifImg", function() {
+    let state = $(this).attr('state');
+    if (state === "still") {
+      $(this).attr('src', $(this).attr('animatedUrl'));
+      $(this).attr('state', "animate");
+    } else {
+      $(this).attr('src', $(this).attr('stillUrl'));
+      $(this).attr('state', "still");
+    }
+  });
 
   $('#submit').on("click", function(e) {
     e.preventDefault();

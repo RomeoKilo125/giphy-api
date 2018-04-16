@@ -69,18 +69,13 @@ button {
 
 #gifArea {
   text-align: center;
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr); */
 }
 
-.gif {
-  float: left;
+/* .gif {
   width: 30%;
   margin: 10px;
-  grid-row: auto;
-  grid-column: auto;
-}
+
+} */
 
 .gif p {
   margin: 1em;
