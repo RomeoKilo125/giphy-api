@@ -6,7 +6,7 @@ app = function () {
     buttons.forEach(function(element) {
       let b = $('<button>')
       b.text(element);
-      b.addClass("movieButton");
+      b.addClass("showButton");
       b.attr("data-value", element.replace(' ','+'));
       console.log(element.replace(/ /g,'+'))
       $('#buttonGroup').append(b);
@@ -47,7 +47,7 @@ app = function () {
     showButtons();
   });
 
-  $(document).on("click", ".movieButton", function(e) {
+  $(document).on("click", ".showButton", function(e) {
     e.preventDefault();
     let movieName = $(this).data("value");
     let apiKey = "ixY18TyZhxMDm0VMgOEFZJrUtEBOV4l6";
