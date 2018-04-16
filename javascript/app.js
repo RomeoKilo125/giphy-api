@@ -7,8 +7,7 @@ app = function () {
       let b = $('<button>')
       b.text(element);
       b.addClass("showButton");
-      b.attr("data-value", element.replace(' ','+'));
-      console.log(element.replace(/ /g,'+'))
+      b.attr("data-value", element.replace(/ /g,'+'));
       $('#buttonGroup').append(b);
     });
   }
