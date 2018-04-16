@@ -63,9 +63,10 @@ app = function () {
   $('#submit').on("click", function(e) {
     e.preventDefault();
     buttons.push($('#searchBar').val());
-    $('#searchBar').val('');
     showButtons();
+    console.log($('#searchBar').val().replace(/ /g,'+'));
     makeTheCall($('#searchBar').val().replace(/ /g,'+'));
+    $('#searchBar').val('');
   });
 
   $(document).on("click", ".showButton", function(e) {
