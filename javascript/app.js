@@ -13,6 +13,27 @@ app = function () {
     });
   }
 
+  makeTheCall = function(showName) {
+    let apiKey = "ixY18TyZhxMDm0VMgOEFZJrUtEBOV4l6";
+
+    let queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + showName + '&api_key=' + apiKey + '&limit=12';
+
+    console.log(queryURL);
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      $('#gifArea').empty();
+      response.data.forEach(function(element) {
+        showGif(element);
+      });
+    }).fail(function() {
+      console.log("API Call Failed");
+    });
+
+  }
+
   showGif = function(result) {
     console.log(result);
     let gif = $('<div>');
@@ -45,29 +66,12 @@ app = function () {
     buttons.push($('#searchBar').val());
     $('#searchBar').val('');
     showButtons();
+    makeTheCall($('#searchBar').val());
   });
 
   $(document).on("click", ".showButton", function(e) {
     e.preventDefault();
-    let movieName = $(this).data("value");
-    let apiKey = "ixY18TyZhxMDm0VMgOEFZJrUtEBOV4l6";
-
-    let queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + movieName + '&api_key=' + apiKey + '&limit=12';
-
-    console.log(queryURL);
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).done(function(response) {
-      $('#gifArea').empty();
-      response.data.forEach(function(element) {
-        showGif(element);
-      });
-    }).fail(function() {
-      console.log("API Call Failed");
-    });
-
+    makeTheCall($(this).data("value"));
   });
 
 
