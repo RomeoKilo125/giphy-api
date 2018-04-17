@@ -1,4 +1,4 @@
-app = function () {
+app = function() {
   let buttons = ["Phineas and Ferb", "Transformers", "The Jetsons", "Looney Tunes", "Duck Tales", "Talespin", "Darkwing Duck", "Gargoyles", "Rocko's Modern Life"]
 
   showButtons = function() {
@@ -7,7 +7,7 @@ app = function () {
       let b = $('<button>')
       b.text(element);
       b.addClass("showButton");
-      b.attr("data-value", element.replace(/ /g,'+'));
+      b.attr("data-value", element.replace(/ /g, '+'));
       $('#buttonGroup').append(b);
     });
   }
@@ -16,8 +16,6 @@ app = function () {
     let apiKey = "ixY18TyZhxMDm0VMgOEFZJrUtEBOV4l6";
 
     let queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + showName + '&api_key=' + apiKey + '&limit=12';
-
-    console.log(queryURL);
 
     $.ajax({
       url: queryURL,
@@ -64,8 +62,8 @@ app = function () {
     e.preventDefault();
     buttons.push($('#searchBar').val());
     showButtons();
-    console.log($('#searchBar').val().replace(/ /g,'+'));
-    makeTheCall($('#searchBar').val().replace(/ /g,'+'));
+    console.log($('#searchBar').val().replace(/ /g, '+'));
+    makeTheCall($('#searchBar').val().replace(/ /g, '+'));
     $('#searchBar').val('');
   });
 
