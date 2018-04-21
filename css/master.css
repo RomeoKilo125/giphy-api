@@ -26,6 +26,7 @@ body {
   height: 100%;
   padding: 10px;
   text-align: center;
+  background-color: #27e;
 }
 
 #searchArea::after {
@@ -45,12 +46,12 @@ form {
   height: 100%;
   width: 80%;
   padding: 25px;
-  background-color: #ccc;
+  background-color: #c7e;
   text-align: center;
 }
 
 button {
- font-size: inherit;
+  font-size: inherit;
 }
 
 #submit {
@@ -67,8 +68,8 @@ button {
 #gifArea {
   text-align: center;
   display: grid;
-grid-template-rows: repeat(4, 1fr);
-grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .gif {
@@ -88,33 +89,48 @@ grid-template-columns: repeat(3, 1fr);
     width: 760px;
     grid-template-rows: 100px 100px 1fr;
   }
-
   #searchArea {
     grid-row: 1 / 2;
     width: 100%;
   }
-
   #buttonGroup {
     grid-row: 2 / 3;
     width: 100%;
   }
-
   #gifArea {
     grid-row: 3/4;
     width: 100%;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(2, 1fr);
-
   }
-
   @media only screen and (max-width: 768px) {
     .container {
       width: 640px;
     }
-
+  }
+  @media only screen and (max-width: 640px) {
+    .container {
+      width: 540px;
+      grid-template-rows: 100px 200px 1fr;
+    }
+    #buttonGroup {
+      height: 200px;
+    }
     #gifArea {
       grid-template-rows: repeat(12, 1fr);
       grid-template-columns: 1fr;
-
     }
-}
+  }
+  @media only screen and (max-width: 540px) {
+    .container {
+      width: 300px;
+      grid-template-rows: 100px 300px 1fr;
+    }
+    #buttonGroup {
+      height: 300px;
+    }
+    #gifArea {
+      grid-template-rows: repeat(12, 1fr);
+      grid-template-columns: 1fr;
+    }
+  }
